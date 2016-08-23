@@ -1,0 +1,31 @@
+<deps>
+  <name>Framework Installer</name>
+  <repositories>
+    <repository>
+      <id>toolset</id>
+      <key>fxTgaLSsUo</key>
+      <plugins>
+        <plugin>
+          <name>types</name>
+          <version>latest</version>
+          <format>embedded</format>
+        </plugin>
+        <plugin>
+          <name>wp-views</name>
+          <version>latest</version>
+          <format>embedded</format>
+        </plugin>
+        <plugin>
+          <name>cred-frontend-editor</name>
+          <version>latest</version>
+          <format>embedded</format>
+        </plugin>
+        <plugin>
+          <name>toolset-module-manager</name>
+          <version>latest</version>
+          <format>embedded</format>
+        </plugin>
+      </plugins>
+    </repository>
+  </repositories>
+</deps>

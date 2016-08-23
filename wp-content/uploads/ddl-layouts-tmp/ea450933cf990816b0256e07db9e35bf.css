@@ -1,0 +1,97 @@
+/*Layouts css goes here*/
+
+.cred-form {
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+}
+  
+
+ /*******************************************
+ * 		My Messages
+ ********************************************/
+.messages-list {
+  padding: 0;
+  list-style-type: none;
+  margin: 30px 0;
+}
+.messages-list li {
+  padding: 15px 30px;
+  border-bottom: 1px solid #ececec;
+}
+.messages-list .cred-delete {
+  float: right;
+}
+/*******************************************
+ * 		Single message
+ ********************************************/
+.message-date,
+.message-from,
+.message-listing {
+  margin: 0;
+}
+.message-date .glyphicon,
+.message-from .glyphicon,
+.message-listing .glyphicon {
+  margin-right: 5px;
+}
+.message-date a,
+.message-from a,
+.message-listing a {
+  text-decoration: underline;
+}
+.message-entry {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/*******************************************
+ * 		Ad packages
+ ********************************************/
+.ad-packages-options {
+	margin-bottom: $margin-base;
+	text-align: right;
+}
+.ad-packages-options  input[type="submit"] {
+	line-height: 28px;
+}
+
+
+/*******************************************
+* Featured ads
+********************************************/
+.list-element.featured,
+.product-list-table tr.featured td{
+	background: rgba(255, 255, 0, 0.2);
+}
+
+
+/****************************
+	Footer styling
+**************************/
+.footer-credits-products-logo,
+.footer-credits-text
+ {
+  display: inline-block;
+  vertical-align: bottom;
+}
+.footer-credits-products-logo {
+  margin-left:-15px;
+  width: 120px;
+}
+@media (min-width: 768px){
+  .footer-credits-products-logo {
+    margin-bottom:-5px;
+  }
+  .footer-credits-text {
+    width: -webkit-calc(100% - 120px);
+    width: calc(100% - 120px);
+  }
+  .footer-credits-text p:last-child {
+    margin-bottom: 0;
+  }
+}
+.footer-credits-otgs {
+  margin-top: 30px;
+   text-align: right;
+}

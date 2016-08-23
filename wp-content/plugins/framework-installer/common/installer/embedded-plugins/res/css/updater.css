@@ -1,0 +1,17 @@
+
+table.installer-ep-updater-table{border: 1px solid #e5e5e5;box-shadow: 0 1px 1px rgba(0,0,0,.04);width:100%;}
+table.installer-ep-updater-table tr.titles-row{background:rgb(237, 237, 237);}
+table.installer-ep-updater-table tr th, table.installer-ep-updater-table tr td{padding:12px;border:none;width:25%;vertical-align: baseline;}
+table.installer-ep-updater-table tr td.updater-input-col{text-align:center;}
+table.installer-ep-updater-table tr td.updater-title-col{font-weight: bold;}
+
+.button-wrap{padding-top:24px;text-align: right;}
+.update-nag-header{width:98%;margin:30px auto 0 auto;max-width:1440px;}
+.update-nag-header h1{margin-bottom:0px;padding-bottom:0px;}
+.update-nag-header p{margin-top:0.8em;margin-bottom: 2.4em;}
+.toolset-updater-form-wrap{text-align: center;}
+.toolset-updater-form-inner{text-align: left;width:98%;margin:0 auto 16px auto;max-width:1440px;}
+.updater-warning{margin-top:12px;margin-bottom:24px;}
+th.centered{text-align: center;}
+table.three-columns-table tr th, table.three-columns-table tr td{width:42%;}
+table.three-columns-table tr th.first-one, table.three-columns-table tr td.first-one{width:16%;}

@@ -1,0 +1,17 @@
+Wordpress Plugin: 
+Toolset CRED Commerce, by OnTheGoSystems
+
+Changelog:
+
+1.1
+* Fixed an issue with the WPML translation of the Checkout and Thank-you messages.
+
+1.0
+* Added support for user subscriptions and integration with CRED user forms
+* Removed [cred_thankyou_message] shortcode and added support for thank you message text option
+* Fixed an issue regarding messages text escaping
+* Fixed a compatibility issue with Woocommerce 2.5.2
+
+0.9.6
+* Initial release
+* Integration for CRED 1.*

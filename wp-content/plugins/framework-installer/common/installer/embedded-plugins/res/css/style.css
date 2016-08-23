@@ -1,0 +1,17 @@
+.installer_ep_progress_li {
+    background: url(../img/ajax-loader-small.gif) no-repeat;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+.installer_ep_check_li {
+    background: url(../img/checkmark-green.png) no-repeat;
+    padding-left: 20px;
+}
+
+.installer_ep_error_li {
+    background: url(../img/error.png) no-repeat;
+    padding-left: 20px;
+}
+
+#installer_ep_setup_complete a.button-primary{text-decoration: none}

@@ -1,0 +1,9 @@
+/** OVERRIDES IFRAME BEHAVIOUR FOR Toolset iFrame **/
+
+/** Enabling scrolling for screens having height 768px or lower. **/
+/** Since the document is loaded in an iFrame, the corresponding max-height refers to the document height "within" the iFrame. **/
+@media (max-height: 470px) {
+	body.modal-open {
+		overflow: auto !important;
+	}
+}

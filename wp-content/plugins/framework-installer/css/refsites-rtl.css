@@ -1,0 +1,516 @@
+/*RTL compatible*/
+
+/**
+ * Reference Sites management admin page
+ */
+.refsite-browser .refsites {
+    clear: both;
+    padding: 0 0 100px;
+}
+/**
+ * Main refsite element
+ * (has flexible margins)
+ */
+.refsite-browser .refsite {
+    cursor: pointer;
+    float: left;
+    margin: 0 4% 4% 0;
+    position: relative;
+    width: 30.6%;
+    border: 1px solid #dedede;
+    -webkit-box-shadow: 0 1px 1px -1px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 1px -1px rgba(0,0,0,0.1);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.ie8 .refsite-browser .refsite {
+    width: 30%;
+    margin: 0 3% 4% 0;
+}
+
+.refsite-browser .refsite:nth-child(3n) {
+    margin-right: 0;
+}
+
+.refsite-browser .refsite:hover,
+.refsite-browser .refsite:focus {
+    cursor: pointer;
+}
+
+.refsite-browser .refsite .refsite-name {
+    font-size: 15px;
+    font-weight: 600;
+    height: 18px;
+    margin: 0;
+    padding: 15px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 0 rgba(0,0,0,0.1);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background: #fff;
+    background: rgba(255,255,255,0.65);
+}
+
+/* Activate and Customize buttons, shown on hover and focus */
+.refsite-browser .refsite .refsite-actions {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    opacity: 0;
+    -webkit-transition: opacity 0.1s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 38px;
+    padding: 9px 10px 0 10px;
+    background: rgba(244, 244, 244, 0.7);
+    border-left: 1px solid rgba(0,0,0,0.05);
+}
+
+.refsite-browser .refsite:hover .refsite-actions,
+.refsite-browser .refsite.focus .refsite-actions,
+.refsite-browser .refsite:focus .refsite-actions {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    opacity: 1;
+}
+
+.refsite-browser .refsite .refsite-actions .button-primary {
+    margin-right: 3px;
+}
+
+.refsite-browser .refsite .refsite-actions .button-secondary {
+    float: none;
+    margin-left: 3px;
+}
+
+/**
+ * refsite Screenshot
+ *
+ * Has a fixed aspect ratio of 1.5 to 1 regardless of screenshot size
+ * It is also responsive.
+ */
+.refsite-browser .refsite .refsite-screenshot {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.refsite-browser .refsite .refsite-screenshot:after {
+    content: '';
+    display: block;
+    padding-top: 66.66666%; /* using a 3/2 aspect ratio */
+}
+
+.refsite-browser .refsite .refsite-screenshot img {
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    -webkit-transform: translateZ( 0 ); /* Prevents rendering bugs in Chrome */
+    -webkit-transition: opacity 0.2s ease-in-out; /* Prevents rendering bugs in Chrome */
+    transition: opacity 0.2s ease-in-out;
+}
+
+.refsite-browser .refsite:hover .refsite-screenshot,
+.refsite-browser .refsite:focus .refsite-screenshot {
+    background: #fff;
+}
+
+.refsite-browser.rendered .refsite:hover .refsite-screenshot img,
+.refsite-browser.rendered .refsite:focus .refsite-screenshot img {
+    opacity: 0.4;
+}
+
+.refsite-browser .refsite .more-details {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    opacity: 0;
+    position: absolute;
+    top: 35%;
+    right: 25%;
+    left: 25%;
+    background: #222;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    font-size: 15px;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.6);
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    padding: 15px 12px;
+    text-align: center;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: opacity 0.1s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.refsite-browser .refsite:focus {
+    border-color: #5b9dd9;
+    -webkit-box-shadow: 0 0 2px rgba( 30, 140, 190, 0.8 );
+    box-shadow: 0 0 2px rgba( 30, 140, 190, 0.8 );
+}
+
+.refsite-browser .refsite:focus .more-details {
+    opacity: 1;
+}
+
+/* Current refsite needs to have its action always on view */
+.refsite-browser .refsite.active:focus .refsite-actions {
+    display: block;
+}
+
+.refsite-browser.rendered .refsite:hover .more-details,
+.refsite-browser.rendered .refsite:focus .more-details {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    opacity: 1;
+}
+
+/**
+ * Displays a refsite update notice
+ * when an update is available.
+ */
+.refsite-browser .refsite .refsite-update,
+.refsite-browser .refsite .refsite-installed {
+    background: #d54e21;
+    background: rgba(213, 78, 33, 0.95);
+    color: #fff;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    overflow: hidden;
+}
+
+.refsite-browser .refsite .refsite-update:before,
+.refsite-browser .refsite .refsite-installed:before {
+    content: '\f463';
+    display: inline-block;
+    font: normal 20px/1 'dashicons';
+    margin: 0 6px 0 0;
+    opacity: 0.8;
+    position: relative;
+    top: 5px;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/**
+ * The currently active refsite
+ */
+.refsite-browser .refsite.active .refsite-name {
+    background: #2f2f2f;
+    color: #fff;
+    padding-right: 110px;
+    font-weight: 300;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.5);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.5);
+}
+
+.refsite-browser .refsite.active .refsite-name span {
+    font-weight: 600;
+}
+
+.refsite-browser .refsite.active .refsite-actions {
+    background: rgba(49,49,49,0.7);
+    border-left: none;
+    opacity: 1;
+}
+
+.refsite-browser .refsite.active .refsite-actions .button-primary {
+    margin-right: 0;
+}
+
+.refsite-browser .refsite .refsite-author {
+    background: #222;
+    color: #eee;
+    display: none;
+    font-size: 14px;
+    margin: 0 10px;
+    padding: 5px 10px;
+    position: absolute;
+    bottom: 56px;
+}
+
+.refsite-browser .refsite.display-author .refsite-author {
+    display: block;
+}
+
+.refsite-browser .refsite.display-author .refsite-author a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Search form */
+.manage-sites_page_manage-refsites .wp-filter-search {
+    position: relative;
+    top: -2px;
+    left: 20px;
+    margin: 0;
+    width: 280px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.refsite-overlay .refsite-backdrop {
+    position: absolute;
+    left: -20px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #f1f1f1;
+    background: rgba(238,238,238,.9);
+    z-index: 10
+}
+
+.refsite-overlay .refsite-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    border-bottom: 1px solid #ddd
+}
+
+.refsite-overlay .refsite-header .close {
+    cursor: pointer;
+    height: 48px;
+    width: 50px;
+    text-align: center;
+    float: right;
+    border: 0;
+    border-left: 1px solid #ddd;
+    background-color: transparent;
+    -webkit-transition: color .1s ease-in-out,background .1s ease-in-out;
+    transition: color .1s ease-in-out,background .1s ease-in-out
+}
+
+.refsite-overlay .refsite-header .close:before {
+    font: 400 22px/50px dashicons!important;
+    color: #777;
+    display: inline-block;
+    content: '\f335';
+    font-weight: 300
+}
+
+.refsite-overlay .refsite-header .left,.refsite-overlay .refsite-header .right {
+    cursor: pointer;
+    color: #777;
+    background-color: transparent;
+    height: 48px;
+    width: 54px;
+    float: left;
+    text-align: center;
+    border: 0;
+    border-right: 1px solid #ddd;
+    -webkit-transition: color .1s ease-in-out,background .1s ease-in-out;
+    transition: color .1s ease-in-out,background .1s ease-in-out
+}
+
+.refsite-overlay .refsite-header .close:focus,.refsite-overlay .refsite-header .close:hover,.refsite-overlay .refsite-header .left:focus,.refsite-overlay .refsite-header .left:hover,.refsite-overlay .refsite-header .right:focus,.refsite-overlay .refsite-header .right:hover {
+    background: #ddd;
+    border-color: #ccc;
+    color: #000
+}
+
+.refsite-overlay .refsite-header .close:focus:before,.refsite-overlay .refsite-header .close:hover:before {
+    color: #000
+}
+
+.refsite-overlay .refsite-header .close:focus,.refsite-overlay .refsite-header .left:focus,.refsite-overlay .refsite-header .right:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: 0
+}
+
+.refsite-overlay .refsite-header .left.disabled,.refsite-overlay .refsite-header .left.disabled:hover,.refsite-overlay .refsite-header .right.disabled,.refsite-overlay .refsite-header .right.disabled:hover {
+    color: #ccc;
+    background: inherit;
+    cursor: inherit
+}
+
+.refsite-overlay .refsite-header .left:before,.refsite-overlay .refsite-header .right:before {
+    font: 400 20px/50px dashicons!important;
+    display: inline;
+    font-weight: 300
+}
+
+.rtl .refsite-overlay .refsite-header .right:before,.refsite-overlay .refsite-header .left:before {
+    content: '\f341'
+}
+
+.rtl .refsite-overlay .refsite-header .left:before,.refsite-overlay .refsite-header .right:before {
+    content: '\f345'
+}
+
+.refsite-overlay .refsite-wrap {
+    clear: both;
+    position: fixed;
+    top: 9%;
+    right: 190px;
+    left: 30px;
+    bottom: 3%;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 20px 5px rgba(0,0,0,.1);
+    box-shadow: 0 1px 20px 5px rgba(0,0,0,.1);
+    z-index: 20;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.refsite-overlay .refsite-wrap:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+body.folded .refsite-overlay .refsite-wrap {
+    left: 70px
+}
+
+.refsite-overlay .refsite-about {
+    position: absolute;
+    top: 49px;
+    bottom: 130px;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    padding: 2% 4%
+}
+
+.refsite-overlay .refsite-about:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+.refsite-overlay .refsite-actions {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 25px 5px;
+    background: #f3f3f3;
+    z-index: 30;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-top: 1px solid #eee
+}
+
+.ie8 .refsite-overlay .refsite-actions {
+    border: 1px solid #eee
+}
+
+.refsite-overlay .refsite-actions a {
+    margin-right: 5px;
+    margin-bottom: 5px
+}
+
+@media only screen and (max-width: 650px) {
+    .refsite-overlay .refsite-update,
+    .refsite-overlay .refsite-description {
+        margin-left: 0;
+    }
+
+    .refsite-overlay .refsite-actions .inactive-refsite {
+        display: inline;
+    }
+
+    .refsite-overlay .refsite-screenshots {
+        width: 100%;
+        float: none;
+    }
+
+    .refsite-overlay .refsite-info {
+        width: 100%;
+    }
+
+    .refsite-overlay .refsite-author {
+        margin: 5px 0 15px 0;
+    }
+
+    .refsite-overlay .current-label {
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+    .refsites-php .wrap h2 {
+        width: 100%;
+    }
+
+    .refsites-php .wp-filter-search {
+        float: none;
+        clear: both;
+        left: 0;
+        top: 0;
+        right: 0;
+        margin: 10px 0;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .refsite-browser .refsite.add-new-refsite span:after {
+        font: normal 60px/90px 'dashicons';
+        width: 80px;
+        height: 80px;
+        top: 30%;
+        left: 50%;
+        text-indent: 0;
+        margin-left: -40px;
+    }
+
+    .single-refsite .refsite-wrap {
+        margin: 0 -12px 0 -10px;
+        padding: 10px;
+    }
+    .single-refsite .refsite-overlay .refsite-about {
+        padding: 10px;
+        overflow: visible;
+    }
+    .single-refsite .current-label {
+        display: none;
+    }
+    .single-refsite .refsite-overlay .refsite-actions {
+        position: static;
+    }
+}
+
+.refsite-install-progress {
+    clear: both;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2% 4%;
+    background: #fff;
+    opacity: 1;
+    height:100%;
+    width: 90%;
+}
+.toplevel_page_manage-refsites .wp-filter-search {
+	margin-left:3%;
+}
+.refsite-actions .prequisite_error_div_msg {
+	text-align:right;
+}
+.refsite-actions .wpmlversion_div_msg {
+	text-align:right;
+}
