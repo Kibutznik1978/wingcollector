@@ -11,3 +11,12 @@
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
  Text Domain:  twenty-fifteen-child
 */
+
+body .nav>li>a {
+    font-weight: 100;
+    font-size: 1.075em;
+}
+
+.entry-title {
+       display:none;
+}

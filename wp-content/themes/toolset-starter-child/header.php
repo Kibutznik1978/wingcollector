@@ -126,9 +126,12 @@ function toolset_starter_menu( $menu_position, $menu_class, $menu_container_clas
 						<div class="col-sm-5 logo col-xs-6">
 				<?php if(get_theme_mod( 'logo', get_template_directory_uri() . '/images/toolset-logo-white.png') != '') :?>
 					<a href="<?php echo esc_url( home_url() );?>">
+
 						<img src="<?php echo get_theme_mod( 'logo', get_template_directory_uri() . '/images/toolset-logo-white.png');?>" alt="">
 					</a>
 				<?php endif;?>
+	
+
 			</div>
 			<!--<div class="col-sm-9 static col-xs-5">
 				<?php if( $menu_position === 'banner-inside' )
