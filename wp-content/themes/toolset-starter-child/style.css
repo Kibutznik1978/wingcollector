@@ -20,3 +20,8 @@ body .nav>li>a {
 .entry-title {
        display:none;
 }
+
+.toolset-menu-banner-below {
+    margin-top: -1px;
+    margin-bottom: 0;
+}

@@ -104,6 +104,7 @@ function toolset_starter_menu( $menu_position, $menu_class, $menu_container_clas
 <body <?php body_class(); ?>>
 <?php if( $menu_position === 'static-top' || $menu_position === 'fixed-top' )
 	toolset_starter_menu( $menu_position, $menu_class, $menu_container_class ); ?>
+
 <div class="wrapper">
 	<?php if( is_active_sidebar( 'sidebar-header' ) ): ?>
 		<div class="container container-sidebar-header">
@@ -118,6 +119,7 @@ function toolset_starter_menu( $menu_position, $menu_class, $menu_container_clas
 				<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" class="img-responsive"/>
 			</div>
 		</div>
+
 	<?php endif; ?>
 
 	<header class="container container-header">
@@ -138,10 +140,15 @@ function toolset_starter_menu( $menu_position, $menu_class, $menu_container_clas
 					toolset_starter_menu( $menu_position, $menu_class, $menu_container_class ); ?>
 			</div>-->
 		</div>
+
+
+
 	</header>
+
+	<?php if( $menu_position === 'banner-below' )
+			toolset_starter_menu( $menu_position, $menu_class, $menu_container_class ); ?>
 
 	<section class="<?php echo (get_theme_mod('ref_container_wrapper', 1) == 1)? 'container' : '';?> container-main" role="main">
 
-		<?php if( $menu_position === 'banner-below' )
-			toolset_starter_menu( $menu_position, $menu_class, $menu_container_class ); ?>
+		
 
