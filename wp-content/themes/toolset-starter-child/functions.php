@@ -15,6 +15,30 @@ add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 
 
 
+
+add_shortcode( 'prev', 'prev_shortcode' );
+add_shortcode( 'next', 'next_shortcode' );
+function next_shortcode($atts) {
+    global $post;
+    ob_start(); 
+    next_post_link( '<div class="nav-next">%link</div>', 'Next Wing &rarr;', true, '', 'wing-category' );              
+    $result = ob_get_contents();
+    ob_end_clean();
+    return $result;
+}
+
+function prev_shortcode($atts) {
+    global $post;
+    ob_start();
+    previous_post_link( '<div class="nav-previous">%link</div>', '&larr; Previous Wing', true, '', 'wing-category');              
+    $result = ob_get_contents();
+    ob_end_clean();
+    return $result;
+}
+
+
+
+
 function my_previous_next_post() {
     // retrieve the value for next post link
    
@@ -54,10 +78,23 @@ add_shortcode('previous-next-post-links', 'my_previous_next_post');
 
 
 
+add_shortcode( 'post-count', 'wp_get_cat_postcount' );
+function wp_get_cat_postcount($id) {
+    $cat = get_category($id);
+    $count = (int) $cat->count;
+    $taxonomy = 'category';
+    $args = array(
+        'child_of' => $id,
+    );
+    $tax_terms = get_terms($taxonomy,$args);
+    foreach ($tax_terms as $tax_term) {
+        $count +=$tax_term->count;
+    }
 
+    return $count;
+}
 
-
-
+wp_get_cat_postcount();
 
 
 
